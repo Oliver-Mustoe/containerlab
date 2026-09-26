@@ -19,8 +19,10 @@ function check_os {
             fi
         elif [ "$ID" = "ubuntu" ]; then
             DISTRO_TYPE="ubuntu"
-            if [ "$VERSION_ID" = "25.04" ] || [ "$VERSION_ID" = "25.10" ] || [ "${VERSION_ID:0:2}" = "26" ]; then
+            if [ "$VERSION_ID" = "25.04" ] || [ "$VERSION_ID" = "25.10" ]; then
                 DOCKER_VERSION="28.5.2"
+            elif [ "${VERSION_ID:0:2}" = "26" ]; then
+                DOCKER_VERSION="29.8.1"
             fi
         elif [ "$ID" = "fedora" ]; then
             DISTRO_TYPE="fedora"
